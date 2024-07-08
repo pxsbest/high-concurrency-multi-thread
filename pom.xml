@@ -12,6 +12,7 @@
         <module>chapter-01-快速认识线程</module>
         <module>chapter-02</module>
         <module>chapter-03-Thread-API的详情介绍</module>
+        <module>chapter-04-线程安全与数据同步</module>
     </modules>
 
     <properties>
