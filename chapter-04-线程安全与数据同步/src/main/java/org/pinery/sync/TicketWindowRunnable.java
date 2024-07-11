@@ -7,11 +7,18 @@ public class TicketWindowRunnable implements Runnable {
     private int index = 1;
     private final static int MAX = 5000;
 
+    //增加同步机制
+    private final static Object MUTEX = new Object();
+
 
     @Override
     public void run() {
-        while (index <= MAX) {
-            System.out.println(Thread.currentThread() + " 的号码是:" + (index++));
+
+        //为了防止线程干扰和内存一致性错误,增加线程同步机制 synchronized
+        synchronized (MUTEX) {
+            while (index <= MAX) {
+                System.out.println(Thread.currentThread() + " 的号码是:" + (index++));
+            }
         }
     }
 
