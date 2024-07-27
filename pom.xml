@@ -23,6 +23,7 @@
         <module>chapter-06-ThreadGroup</module>
         <module>chapter-07-Hook线程以及捕获线程执行异常</module>
         <module>chapter-08-线程池原理以及自定义线程池</module>
+        <module>chapter-09-类的加载过程</module>
     </modules>
 
     <properties>
