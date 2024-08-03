@@ -26,6 +26,7 @@
         <module>chapter-09-类的加载过程</module>
         <module>chapter-10-JVM类加载器</module>
         <module>HelloWorld</module>
+        <module>chapter-11</module>
     </modules>
 
     <properties>

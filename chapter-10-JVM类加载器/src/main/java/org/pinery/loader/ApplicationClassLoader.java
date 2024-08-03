@@ -12,4 +12,9 @@ public class ApplicationClassLoader {
         //系统类加载器的父加载器是 扩展类加载器
         System.out.println(ApplicationClassLoader.class.getClassLoader().getParent());
     }
+      /*
+        什么是类路径?
+        https://blog.csdn.net/weixin_43836337/article/details/139224257
+      */
+
 }
