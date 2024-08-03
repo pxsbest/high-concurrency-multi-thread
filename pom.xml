@@ -24,11 +24,13 @@
         <module>chapter-07-Hook线程以及捕获线程执行异常</module>
         <module>chapter-08-线程池原理以及自定义线程池</module>
         <module>chapter-09-类的加载过程</module>
+        <module>chapter-10-JVM类加载器</module>
+        <module>HelloWorld</module>
     </modules>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -51,8 +53,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
         </plugins>
