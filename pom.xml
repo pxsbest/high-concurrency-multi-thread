@@ -15,20 +15,22 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>chapter-01-快速认识线程</module>
+        <module>chapter-01</module>
         <module>chapter-02</module>
-        <module>chapter-03-Thread-API的详情介绍</module>
-        <module>chapter-04-线程安全与数据同步</module>
-        <module>chapter-05-线程间通信</module>
-        <module>chapter-06-ThreadGroup</module>
-        <module>chapter-07-Hook线程以及捕获线程执行异常</module>
-        <module>chapter-08-线程池原理以及自定义线程池</module>
-        <module>chapter-09-类的加载过程</module>
-        <module>chapter-10-JVM类加载器</module>
+        <module>chapter-03</module>
+        <module>chapter-04</module>
+        <module>chapter-05</module>
+        <module>chapter-06</module>
+        <module>chapter-07</module>
+        <module>chapter-08</module>
+        <module>chapter-09</module>
+        <module>chapter-10</module>
         <module>chapter-11</module>
         <module>chapter-12</module>
         <module>chapter-13</module>
         <module>chapter-14</module>
+        <module>chapter-15</module>
+        <module>chapter-16</module>
     </modules>
 
     <properties>
