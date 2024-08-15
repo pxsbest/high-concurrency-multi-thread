@@ -28,14 +28,10 @@ public class FlightSecurityTest {
         }
     }
 
-
     public static void main(String[] args) {
         FlightSecurity flightSecurity = new FlightSecurity();
         new Passengers(flightSecurity,"A123456","AF123456").start();
         new Passengers(flightSecurity,"B123456","BF123456").start();
         new Passengers(flightSecurity,"C123456","CF123456").start();
     }
-
-
-
 }

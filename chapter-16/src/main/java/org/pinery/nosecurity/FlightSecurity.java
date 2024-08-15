@@ -27,11 +27,4 @@ public class FlightSecurity {
     public String toString() {
         return "The " + count + " passengers,boardingPass [" + boardingPass + "],idCard [" + idCard + "]";
     }
-
-
-
-
-
-
-
 }
