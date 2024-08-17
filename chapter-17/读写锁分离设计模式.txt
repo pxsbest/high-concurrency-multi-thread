@@ -1,0 +1,6 @@
+总结
+
+ReadLock 和 WriteLock 直接获取锁和释放锁,
+同时与 ReadWriteLock 关联, ReadWriteLock中有 各种共享的读写锁相关参数:比如正在读/正在写/等待读/等待写的线程数
+
+
