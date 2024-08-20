@@ -29,13 +29,19 @@ public class FutureTask<T> implements Future<T> {
         return isDone;
     }
 
-    public void finish(T result) {
-        if (isDone) {
-            return;
+    protected void finish(T result) {
+        synchronized (LOCK){
+            if (isDone) {
+                return;
+            }
+            this.isDone=true;
+            this.result=result;
+            LOCK.notifyAll();
         }
-        this.isDone=true;
-        this.result=result;
-        this.LOCK.notifyAll();
     }
-
+    /*
+    * 注意:
+    * 所有同步方法一定要在 synchronized 代码块中,
+    * 否则会报 监听器状态异常 错误 : java.lang.IllegalMonitorStateException
+    * */
 }

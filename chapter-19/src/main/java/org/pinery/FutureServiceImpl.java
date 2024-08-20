@@ -14,7 +14,7 @@ public class FutureServiceImpl<IN,OUT> implements FutureService<IN,OUT>{
     }
     @Override
     public Future<?> submit(Runnable runnable) {
-        FutureTask<Void> future = new FutureTask<>();
+       final FutureTask<Void> future = new FutureTask<>();
         new Thread(()->{
            runnable.run();
            future.finish(null);
@@ -24,6 +24,22 @@ public class FutureServiceImpl<IN,OUT> implements FutureService<IN,OUT>{
 
     @Override
     public Future<OUT> submit(Task<IN, OUT> task, IN input) {
-        return null;
+        FutureTask<OUT> future = new FutureTask<>();
+        new Thread(()->{
+            OUT result = task.get(input);
+            //任务执行完后,将真实的结果通过finish 方法传递给 future
+            future.finish(result);
+        },getNextName()).start();
+        return future;
+    }
+
+    @Override
+    public Future<OUT> submit(Task<IN, OUT> task, IN input, Callback callback) {
+        FutureTask<OUT> future = new FutureTask<>();
+        new Thread(()->{
+            OUT result = task.get(input);
+            callback.call(result);
+        },getNextName()).start();
+        return future;
     }
 }

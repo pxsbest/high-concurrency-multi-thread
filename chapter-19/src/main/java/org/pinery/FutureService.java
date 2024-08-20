@@ -14,8 +14,13 @@ public interface FutureService<IN, OUT> {
      */
     Future<OUT> submit(Task<IN, OUT> task, IN input);
 
+    /**
+     * 提交需要返回值的任务,通过回调函数接收
+     */
+    Future<OUT> submit(Task<IN, OUT> task, IN input, Callback callback);
+
     //使用静态方法创建一个FutureService的实现
-    static FutureService newService() {
-        return null;
+    static <T,R> FutureService<T,R> newService() {
+        return new FutureServiceImpl<>();
     }
 }
