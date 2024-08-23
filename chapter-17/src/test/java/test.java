@@ -61,5 +61,16 @@ public class test {
     }
 
 
+    @Test
+    void testDis() {
+        System.out.println(1 * 100 / 3);
+        System.out.println(Math.floor(2 * 100 / 3) );
+        System.out.println(Math.ceil(2 * 100 / 3) );
+        System.out.println(Math.round(2 * 100.0 / 3) );
+
+
+    }
+
+
 
 }
