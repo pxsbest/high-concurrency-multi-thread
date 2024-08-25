@@ -1,14 +1,18 @@
-package org.pinery;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInfo;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.concurrent.TimeUnit;
+import java.util.stream.IntStream;
 
 /**
- * @Author ${USER}
- * @DateTime ${DATE} ${TIME}
- * @Description
+ *
  **/
-public class Main {
-    public static void main(String[] args) throws InterruptedException {
+
+public class test {
+
+    @Test
+    void testThread() throws InterruptedException {
         Thread thread = new Thread(() -> {
             try{
                 TimeUnit.SECONDS.sleep(1000);
@@ -21,5 +25,6 @@ public class Main {
 
         TimeUnit.SECONDS.sleep(2);
         System.out.println("主线程结束");
+
     }
 }

@@ -14,8 +14,8 @@ public class DaemonThread {
                 }
             }
         });
-        //将thread设置为守护线程
-        thread.setDaemon(true);
+        //将thread设置为守护线程: false程序不会退出,true程序为退出
+        thread.setDaemon(false);
 
         thread.start();
         Thread.sleep(2_000L);
