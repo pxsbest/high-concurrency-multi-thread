@@ -56,10 +56,15 @@ public class BasicThreadPool extends Thread implements ThreadPool {
     private void init() {
         start();
         for (int i = 0; i < initSize; i++) {
+            System.out.println("初始化:newThread");
             newThread();
         }
     }
 
+    /**
+     * 在BasicThreadPool new的同时,自身轮循判断 当前活跃线程和 任务队列中任务数量 等数据,进行判断是否添加新线程还是减少线程;
+     * 同时启动InternalTask 线程 不断从 RunnableQueue队列中取任务, execute()不断向 RunnableQueue队列中放任务
+     */
     @Override
     public void run() {
         while (!isShutdown && !isInterrupted()) {
@@ -71,6 +76,7 @@ public class BasicThreadPool extends Thread implements ThreadPool {
             }
 
             synchronized (this) {
+                System.out.println("当前activeCount:" + activeCount);
                 if (isShutdown) {
                     break;
                 }
@@ -97,13 +103,15 @@ public class BasicThreadPool extends Thread implements ThreadPool {
         }
     }
 
-    private void newThread(){
+    //创建线程并加到线程队列中
+    private void newThread() {
         //创建任务线程,并且启动
         InternalTask internalTask = new InternalTask(runnableQueue);
         Thread thread = this.threadFactory.createThread(internalTask);
         ThreadTask threadTask = new ThreadTask(thread, internalTask);
         threadQueue.offer(threadTask);
         this.activeCount++;
+        System.out.println("activeCount++:"+this.activeCount);
         thread.start();
     }
 
@@ -125,6 +133,7 @@ public class BasicThreadPool extends Thread implements ThreadPool {
         this.runnableQueue.offer(runnable);
     }
 
+    //region 属性
     @Override
     public boolean isShutdown() {
         return this.isShutdown;
@@ -186,6 +195,7 @@ public class BasicThreadPool extends Thread implements ThreadPool {
             return this.activeCount;
         }
     }
+    //endregion
 
     private static class ThreadTask {
         Thread thread;
