@@ -13,11 +13,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         //Operator oper = new Operator();
         //oper.call("message");
-
-
         new ChatServer().startServer();
-
-
-
     }
 }

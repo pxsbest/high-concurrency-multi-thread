@@ -37,5 +37,4 @@ public class ChatServer {
             this.threadPool.execute(new ClientHandler(client));
         }
     }
-
 }
