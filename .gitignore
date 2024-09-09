@@ -10,7 +10,7 @@
 # .idea文件夹
 .idea/
 
-
+*.iml
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
