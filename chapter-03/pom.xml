@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>chapter-03-Thread_API</artifactId>
+    <artifactId>chapter-03</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
