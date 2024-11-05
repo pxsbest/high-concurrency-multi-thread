@@ -1,4 +1,4 @@
-package org.pinery;
+package org.pinery.test;
 
 import java.util.LinkedList;
 import java.util.Queue;

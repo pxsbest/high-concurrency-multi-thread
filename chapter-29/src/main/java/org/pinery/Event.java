@@ -1,22 +1,14 @@
 package org.pinery;
 
 /**
- * Event 只包含了该 Event所属的 类型和数据
+ * Evnet是对 Message的 一个最简单的实现.
  **/
-public class Event {
-    private final String type;
-    private final String data;
+public class Event implements Message {
 
-    public Event(String type, String data) {
-        this.type = type;
-        this.data = data;
+    @Override
+    public Class<? extends Message> getType() {
+        return getClass();
     }
 
-    public String getData() {
-        return data;
-    }
 
-    public String getType() {
-        return type;
-    }
 }
