@@ -1,15 +1,13 @@
 package org.pinery;
 
 /**
- * @Author gensci
- * @DateTime 2024/11/5 12:24
- * @Description
+ *
  **/
 public class EventDispatcherExample {
     /**
      * InputEvent 中定义了两个属性 X和Y,主要用于在其他 Channel中的运算
      */
-    static class InputEvent extends Event {
+   public static class InputEvent extends Event {
         private final int x;
         private final int y;
 
@@ -29,7 +27,7 @@ public class EventDispatcherExample {
     /**
      * 用于存放结果的 Event
      */
-    static class ResultEvent extends Event {
+   public static class ResultEvent extends Event {
         private final int result;
 
         public ResultEvent(int result) {
