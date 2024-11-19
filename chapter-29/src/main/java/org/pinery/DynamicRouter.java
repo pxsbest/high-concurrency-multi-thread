@@ -13,9 +13,6 @@ public interface DynamicRouter<E extends Message> {
      * @param message
      */
     void dispatch(E message);
-
-
-
 }
 
 

@@ -3,9 +3,7 @@ package org.pinery.usages;
 import org.pinery.async.AsyncEventDispatcher;
 
 /**
- * @Author gensci
- * @DateTime 2024/11/7 14:41
- * @Description
+ *
  **/
 public class UserChatApplication {
     public static void main(String[] args) {
